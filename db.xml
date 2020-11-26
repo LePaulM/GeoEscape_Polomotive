@@ -60,13 +60,35 @@
         <IMG>assets/images/jeu/pizza.png</IMG>
         <LAT>48.868127</LAT>
         <LNG>2.3257835</LNG>
-        <MINZOOM>17</MINZOOM>
+        <MINZOOM>10</MINZOOM>
         <AVANT>La faim commence à se faire sentir ! Il est temps d'aller manger. Trouve une des pizzerias près de la Place de la Concorde pour pouvoir savourer un bon repas.</AVANT>
         <APRES>Quand l'appétit va, tout va! (Peut servir à passer une énigme)</APRES>
         <MODE>click</MODE>
     </OBJ>
     <OBJ>
         <ID>6</ID>
+        <NAME>pizza</NAME>
+        <IMG>assets/images/jeu/pizza.png</IMG>
+        <LAT>48.83963900301541</LAT>
+        <LNG>2.3363113403320317</LNG>
+        <MINZOOM>10</MINZOOM>
+        <AVANT>La faim commence à se faire sentir ! Il est temps d'aller manger. Trouve une des pizzerias près de la Place de la Concorde pour pouvoir savourer un bon repas.</AVANT>
+        <APRES>Quand l'appétit va, tout va! (Peut servir à passer une énigme)</APRES>
+        <MODE>click</MODE>
+    </OBJ>
+    <OBJ>
+        <ID>7</ID>
+        <NAME>pizza</NAME>
+        <IMG>assets/images/jeu/pizza.png</IMG>
+        <LAT>48.83557148028076</LAT>
+        <LNG>2.3648071289062504</LNG>
+        <MINZOOM>10</MINZOOM>
+        <AVANT>La faim commence à se faire sentir ! Il est temps d'aller manger. Trouve une des pizzerias près de la Place de la Concorde pour pouvoir savourer un bon repas.</AVANT>
+        <APRES>Quand l'appétit va, tout va! (Peut servir à passer une énigme)</APRES>
+        <MODE>click</MODE>
+    </OBJ>
+    <OBJ>
+        <ID>8</ID>
         <NAME>le gymnase</NAME>
         <IMG>assets/images/jeu/match.png</IMG>
         <LAT>48.83525369115733</LAT>
@@ -77,7 +99,7 @@
         <MODE>item</MODE>
     </OBJ>
     <OBJ>
-        <ID>7</ID>
+        <ID>9</ID>
         <NAME>moi</NAME>
         <IMG>assets/images/histoire/paul_perdu3.png</IMG>
         <LAT>48.8346438</LAT>
@@ -88,7 +110,7 @@
         <MODE>code</MODE>
     </OBJ>
     <OBJ>
-        <ID>8</ID>
+        <ID>10</ID>
         <NAME>la gare</NAME>
         <IMG>assets/images/jeu/gare.png</IMG>
         <LAT>48.8336354</LAT>
@@ -99,7 +121,7 @@
         <MODE>click</MODE>
     </OBJ>
     <OBJ>
-        <ID>9</ID>
+        <ID>11</ID>
         <NAME>la maison</NAME>
         <IMG>assets/images/jeu/home.png</IMG>
         <LAT>48.84614211612615</LAT>

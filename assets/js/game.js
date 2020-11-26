@@ -45,7 +45,7 @@ window.onload = function() {
         var xmlDoc = xml.responseXML;
 
         var x = xmlDoc.getElementsByTagName("OBJ");
-        for (i = 0; i <x.length; i++) {
+        for (i = 0; i < x.length; i++) {
 
             var objet = {
                 id:parseInt(x[i].getElementsByTagName("ID")[0].childNodes[0].nodeValue),
@@ -127,7 +127,7 @@ window.onload = function() {
     north.addTo(map);
 
     // initialise le chronomètre 
-    countdownManager.init();
+    countdownManager.init(600000);      //600000 correspondent à 10 minutes
 }
 
 
@@ -153,7 +153,7 @@ function generate_object(objet) {
 
     /* console.log(typeof marker); */
 
-    if (typeof marker !== 'undefined') {
+    if (typeof marker !== 'undefined' && iterateur != 5) {
         marker.remove();
     }
     
@@ -181,33 +181,38 @@ function generate_object(objet) {
     });
     marker = L.marker(latlng, {icon: satellite_icon});
     layerGroup.addLayer(marker);
+
     
     
     if (map.getZoom()>=minZoom) {
-        marker.addTo(map);
+        marker.addTo(layerGroup);
+        layerGroup.addTo(map);
     }
 
     map.on('zoom', function(e){
         /* console.log(map.getZoom()); */
         /* console.log(outil); */
-        if (map.getZoom()<minZoom || id == 3 && outil == false || id == 4 && outil == false|| id == 7 && outil == false) {
+        if (map.getZoom()<minZoom || id == 3 && outil == false || id == 4 && outil == false|| id == 9 && outil == false) {
             marker.remove();
         } else {
-            marker.addTo(map);
+            marker.addTo(layerGroup);
+            layerGroup.addTo(map);
         }
     });
     map.on('move', function(e){
         /* console.log(map.getZoom()); */
-        if (map.getZoom()<minZoom || id == 3 && outil == false || id == 4 && outil == false|| id == 7 && outil == false) {
+        if (map.getZoom()<minZoom || id == 3 && outil == false || id == 4 && outil == false|| id == 9 && outil == false) {
             marker.remove();
         } else {
-            marker.addTo(map);
+            marker.addTo(layerGroup);
+            layerGroup.addTo(map);
         }
     });
 
     
 
     //console.log('type objet suivant : '+typeof objectTab[iterateur]);
+    // un test pour savoir si le jeu est fini ou non
     if (iterateur < 9) {
          if (mode == 'click')  {
             console.log('objet suivant : '+name);
@@ -235,9 +240,11 @@ function generate_object(objet) {
                     generate_object(obj_array[iterateur]);
                     marker.remove();
                 });
-                // gestion de l'enigme pizza
+                // gestion de l'enigme pizza (id == 5,6,7)
             } else if (id == 5) {
                 marker.on('click',function(e)  {
+                    var x = 3;
+                    console.log('pizza choisie : ' + x + 'minutes en moins');
                     swal(apres);
                     // pour ajouter une description
                     var item = '<div class="item" id="pizza"></div>';
@@ -246,8 +253,77 @@ function generate_object(objet) {
                     $('#pizza').append(image);
                     var text = '<p class="text_inventaire" id="pizza_text">'+apres+'</p>';
                     $('#pizza').append(text);
-                    
-                    iterateur++;
+                    layerGroup.clearLayers();
+
+                    var min = $("#countdown_min").text();
+                    var sec = $("#countdown_sec").text();
+                    console.log(typeof min);
+                    console.log(typeof sec);
+                    var nouveau_temps = (parseInt(min)*60+parseInt(sec))*1000 - x * 60000;  //On perd x minutes si on clique sur cette pizza
+                    console.log(nouveau_temps);
+                    // initialise le chronomètre 
+                    countdownManager.init(nouveau_temps); //600000 correspondent à 10 minutes
+                    countdownManager.displayElement.sec.style.color = "black";
+                    countdownManager.displayElement.min.style.color = "black";
+
+                    iterateur = 8;
+                    generate_object(obj_array[iterateur]);
+                });
+            } else if (id == 6) {
+                marker.on('click',function(e)  {
+                    var x = 1;
+                    console.log('pizza choisie : ' + x + 'minutes en moins');
+                    swal(apres);
+                    // pour ajouter une description
+                    var item = '<div class="item" id="pizza"></div>';
+                    $('#inventaire').append(item);
+                    var image = '<img class="img_inventaire" src='+img+' onclick="iteraction_inventaire(5)" alt="Réinitialise le chronomètre."></img>';
+                    $('#pizza').append(image);
+                    var text = '<p class="text_inventaire" id="pizza_text">'+apres+'</p>';
+                    $('#pizza').append(text);
+                    layerGroup.clearLayers();
+
+                    var min = $("#countdown_min").text();
+                    var sec = $("#countdown_sec").text();
+                    console.log(typeof min);
+                    console.log(typeof sec);
+                    var nouveau_temps = (parseInt(min)*60+parseInt(sec))*1000 - x * 60000;  //On perd x minutes si on clique sur cette pizza
+                    console.log(nouveau_temps);
+                    // initialise le chronomètre 
+                    countdownManager.init(nouveau_temps); //600000 correspondent à 10 minutes
+                    countdownManager.displayElement.sec.style.color = "black";
+                    countdownManager.displayElement.min.style.color = "black";
+
+                    iterateur = 8;
+                    generate_object(obj_array[iterateur]);
+                });
+            } else if (id == 7) {
+                marker.on('click',function(e)  {
+                    var x = 2;
+                    console.log('pizza choisie : ' + x + 'minutes en moins');
+                    swal(apres);
+                    // pour ajouter une description
+                    var item = '<div class="item" id="pizza"></div>';
+                    $('#inventaire').append(item);
+                    var image = '<img class="img_inventaire" src='+img+' onclick="iteraction_inventaire(5)" alt="Réinitialise le chronomètre."></img>';
+                    $('#pizza').append(image);
+                    var text = '<p class="text_inventaire" id="pizza_text">'+apres+'</p>';
+                    $('#pizza').append(text);
+                    layerGroup.clearLayers();
+
+                    var min = $("#countdown_min").text();
+                    var sec = $("#countdown_sec").text();
+                    console.log(typeof min);
+                    console.log(typeof sec);
+                    var nouveau_temps = (parseInt(min)*60+parseInt(sec))*1000 - x * 60000; //On perd x minutes si on clique sur cette pizza
+                    console.log(nouveau_temps);
+                    // initialise le chronomètre 
+                    countdownManager.init(nouveau_temps); //600000 correspondent à 10 minutes
+                    countdownManager.displayElement.sec.style.color = "black";
+                    countdownManager.displayElement.min.style.color = "black";
+
+
+                    iterateur = 8;
                     generate_object(obj_array[iterateur]);
                 });
             }
@@ -265,7 +341,8 @@ function generate_object(objet) {
                 if (outil == false) {
                     marker.remove();
                 } else {
-                    marker.addTo(map);
+                    marker.addTo(layerGroup);
+                    layerGroup.addTo(map);
                     
                     marker.on('click',function(e)  {
                         outil = false;
@@ -286,12 +363,13 @@ function generate_object(objet) {
                 
             }
             // gestion de l'enigme gymnase
-            if (id == 6) {
+            if (id == 8) {
                 console.log(outil);
                 if (outil == false) {
                     marker.remove();
                 } else {
-                    marker.addTo(map);
+                    marker.addTo(layerGroup);
+                    layerGroup.addTo(map);
                     
                     marker.on('click',function(e)  {
                         // on affiche le message de victoire
@@ -339,13 +417,36 @@ function generate_object(objet) {
                       });
                 }); 
             }
-            // gestion de l'enigme ami,moi
-            if (id == 4 || id == 7) {
+            // gestion de l'enigme ami
+            if (id == 4) {
                 
                 if (outil == false) {
                     marker.remove();
                 } else {
-                    marker.addTo(map);
+                    marker.addTo(layerGroup);
+                    layerGroup.addTo(map);
+                    
+                    marker.on('click',function(e)  {
+                        swal("Choisis l'endroit le plus proche du stade pour être plus efficace.");
+                        marker.remove();
+                        
+                        iterateur++;
+                        generate_object(obj_array[5]);
+                        generate_object(obj_array[6]);
+                        generate_object(obj_array[7]);
+                        outil = false;
+                        
+                    });
+                }
+            }
+            // gestion de l'enigme moi
+            if (id == 9) {
+                
+                if (outil == false) {
+                    marker.remove();
+                } else {
+                    marker.addTo(layerGroup);
+                    layerGroup.addTo(map);
                     
                     marker.on('click',function(e)  {
                         swal("Choisis l'endroit le plus proche du stade pour être plus efficace.");
@@ -408,9 +509,9 @@ function iteraction_inventaire(objet) {
          }
          // gestion de l'objet portefeuille
          // gestion de l'enigme gymnase
-         if (iterateur == 6) {
+         if (iterateur == 8) {
             outil = true;
-            generate_object(obj_array[6]);
+            generate_object(obj_array[8]);
          }
 
          // gestion de l'objet telephone
@@ -434,7 +535,7 @@ function iteraction_inventaire(objet) {
               
               // gestion de l'objet telephone
               // gestion de l'enigme moi
-        } else if (iterateur == 7) {
+        } else if (iterateur == 9) {
             correct_code = "13Eliette";
             console.log('code : '+correct_code);
             swal("Il faut que tu dévérouille ton téléphone pour pouvoir activer la localisation. Mais quel est le code ? Rappelle toi, tu l'as vu tout à l'heure !", {
@@ -443,7 +544,7 @@ function iteraction_inventaire(objet) {
               .then((value) => {
                 if (`${value}` == correct_code) {
                     outil = true;
-                    generate_object(obj_array[7]);
+                    generate_object(obj_array[9]);
                     
                 } else {
                     swal("Mauvaise réponse, tu peux retenter ta chance en cliquant sur ton téléphone.");
@@ -454,23 +555,31 @@ function iteraction_inventaire(objet) {
         // gestion de l'objet thé glacé
     } else if(objet == 3) {
         console.log('objet utilisé : thé glacé');
+        var min = $("#countdown_min").text();
+        var sec = $("#countdown_sec").text();
+        //str.split(' ');
+        console.log(min+ ':' +sec);
+        var nouveau_temps = (parseInt(min)*60+parseInt(sec))*1000 + 5 * 60000; //On rajoute 5 minutes
+        console.log(nouveau_temps);
         // initialise le chronomètre 
-        countdownManager.init();
+        countdownManager.init(nouveau_temps); //600000 correspondent à 10 minutes
+        countdownManager.displayElement.sec.style.color = "black";
+        countdownManager.displayElement.min.style.color = "black";
         // enlève le thé glacé de l'inventaire
-        $('#inventaire').remove($('#iced_tea'));
+        $('#iced_tea').remove();
         
         // gestion de l'objet pizza
     } else if(objet == 5) {
         console.log('objet utilisé : pizza');
         // augmente d'une énigme, si on est à l'avant dernière ça fait gagner
-        if (iterateur==8) {
+        if (iterateur==10) {
             window.open("win.php","_self");
         } else {
             iterateur++;
             generate_object(obj_array[iterateur]);
         }
         // enlève la pizza de l'inventaire
-        $('#inventaire').remove($('#pizza'));
+        $('#pizza').remove();
     }
 }
 
@@ -481,6 +590,7 @@ countdownManager = {
 	// Configuration
 	targetTime: null, // Date cible du compte à rebours (00:00:00)
     jeuFini: false, //la variable qui dira si le jeu est fini ou non
+    temps:0,
 
     displayElement: { // Elements HTML où sont affichés les informations
         hour: null,
@@ -490,8 +600,9 @@ countdownManager = {
     },
 
 	// Initialisation du compte à rebours (à appeler 1 fois au chargement de la page)
-	init: function(x){
-        this.targetTime = new Date();   // on initialise la date cible à chaque nouveau niveau. Pour mettre un temps global on peut initialiser la date dès sa création
+	init: function(tmp){
+        this.temps = tmp;
+        this.targetTime = new Date(); 
         // Récupération des références vers les éléments pour l'affichage
         // La référence n'est récupérée qu'une seule fois à l'initialisation pour optimiser les performances
         this.displayElement.min  = document.getElementById('countdown_min');
@@ -505,12 +616,12 @@ countdownManager = {
     },
 
 	// Met à jour le compte à rebours (tic d'horloge)
-	tick: function(){
+	tick: function(temps){
         if (this.jeuFini == false){
             // Instant présent
             var timeNow  = new Date();
             // Calcul du temps restant
-            var diff = this.dateDiff(timeNow, this.targetTime);
+            var diff = this.dateDiff(timeNow, this.targetTime, temps);
             // Si il reste moins de 5 minutes le temps se met en gras et en rouge
             if (diff.min < 5) {
                 this.displayElement.min.innerHTML = "<b>" + diff.min + "<b>";
@@ -519,7 +630,9 @@ countdownManager = {
                 this.displayElement.sec.style.color = "red";
             } else {
                 this.displayElement.min.innerHTML = diff.min;
+                this.displayElement.min.style.color = "black";
                 this.displayElement.sec.innerHTML = diff.sec;
+                this.displayElement.sec.style.color = "black";
             }
 
             // Si le temps est écoulé on affiche une fenêtre avec un bouton confirmer qui permet de recommencer
@@ -572,7 +685,8 @@ countdownManager = {
 		var diff = {}                           // Initialisation du retour
         //console.log('date1 : '+ date1);
         //console.log('date2 : '+ date2);
-        var tmp = date2 - date1 + 600000 ; //600000 correspondent à 10 minutes
+        //console.log('time : ' + this.temps);
+        var tmp = date2 - date1 + this.temps ; 
 
 		tmp = Math.floor(tmp/1000);             // Nombre de secondes entre les 2 dates
 		diff.sec = tmp % 60;                    // Extraction du nombre de secondes
