@@ -1,0 +1,115 @@
+body {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+#map { 
+    position: absolute;
+    width: 100%;
+    /* margin: 10px; */
+    height: 100%;
+    
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+}
+#countdown {
+    z-index: 2;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+
+    width : auto;
+    padding: 5px;
+
+    background-color: #F1EFE7;
+    opacity : 1;
+
+    border-style: inset;
+    border-width: 3px;
+}
+
+#info_dialog {
+    z-index: 2;
+    position: absolute;
+    top: 7em;
+    left: 1em;
+    width : 350px;
+    
+    background-color: #F1EFE7;
+    opacity : 1;
+
+    padding: 0.5em;
+
+    border-style: inset;
+    border-width: 3px;
+
+    text-align: justify;
+}
+
+#inventaire {
+    z-index: 2;
+    position: absolute;
+    bottom: 1em;
+    left: 6em;
+    right : 6em;
+
+    height: 160px;
+
+    background-color: #F1EFE7;
+    opacity : 1;
+
+    border-style: outset;
+
+    margin: 10px;
+    padding: 0.5em;
+    
+    
+    opacity: 0.9;
+
+    display: flex;
+    justify-content : space-around;
+}
+
+#close_info_dialog {
+    justify-self: center;
+}
+
+.img_inventaire {
+    width: 58px;
+    height: 58px;
+    
+}
+
+.text_inventaire {
+    padding: 1px;
+    text-align: justify;
+}
+
+.item {
+    position: relative;
+    font-size : 50%;
+    width : 70px;
+    height: 124px;
+    top: 4em;
+    right : 1em;
+    margin: 1px;
+    padding: 2px;
+
+    background-color: #EEE5F7;
+    opacity : 1;
+
+    border-style: outset;
+    /* border : solid; */
+    border-width: 0.3em; 
+
+    justify-content: center;
+    text-align: justify;
+}
+
+#inventaire_static_text {
+    position: absolute;
+    top: 0.5em;
+    left: 1em;
+
+    margin: 0.5em;
+}

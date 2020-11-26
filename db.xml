@@ -1,0 +1,112 @@
+<CATALOG>
+    <OBJ>
+        <ID>0</ID>
+        <NAME>portefeuille</NAME>
+        <IMG>assets/images/jeu/wallet.png</IMG>
+        <LAT>48.84614211612615</LAT>
+        <LNG>2.5847657024860387</LNG>
+        <MINZOOM>18</MINZOOM>
+        <AVANT>Avant de partir, trouve ton porte-monnaie. Il se trouve chez toi, au Bois de Grace, au nord de ton école. Les objets ne s'affichent qu'à un certain niveau de zoom, essaie de zoomer sur le bois de grace pour trouver ton portefeuille.</AVANT>
+        <APRES>Ton portefeuille ! Peut servir à acheter des choses</APRES>
+        <MODE>click</MODE>
+    </OBJ>
+    <OBJ>
+        <ID>1</ID>
+        <NAME>téléphone</NAME>
+        <IMG>assets/images/jeu/phone.png</IMG>
+        <LAT>48.84364264812584</LAT>
+        <LNG>2.62274980545044</LNG>
+        <MINZOOM>16</MINZOOM>
+        <AVANT>Tu aura besoin de ton téléphone pour contacter ton ami. Or tu l'as oublié chez un ami lors d'une soirée. Cet ami habite à Noisiel, proche de la ligne de RER. Retrouve la ligne de RER et suit la pour retrouver la résidence de on ami.</AVANT>
+        <APRES>Ton téléphone! Ca peut aider à appeler des gens</APRES>
+        <MODE>code</MODE>
+    </OBJ>
+    <OBJ>
+        <ID>2</ID>
+        <NAME>la poste</NAME>
+        <IMG>assets/images/jeu/colis.png</IMG>
+        <LAT>48.84439461983887</LAT>
+        <LNG>2.5834527611732487</LNG>
+        <MINZOOM>16</MINZOOM>
+        <AVANT>Vas chercher le colis de ta mère, ça te permettra d'avoir à manger pour la semaine. Il est à la poste, près de chez toi.</AVANT>
+        <APRES>Un colis plein de bonnes choses !</APRES>
+        <MODE>click</MODE>
+    </OBJ>
+    <OBJ>
+        <ID>3</ID>
+        <NAME>thé glacé</NAME>
+        <IMG>assets/images/jeu/iced_tea.png</IMG>
+        <LAT>48.84665664507882</LAT>
+        <LNG>2.584991008043289</LNG>
+        <MINZOOM>17</MINZOOM>
+        <AVANT>Avant d'aller retrouver son ami Paul passe prendre une bouteille de thé glacé à Franprix en face de chez lui. Va la récupérer, cela pourra t'être utile. Pour payer un item, clique sur ton portefeuille puis sur l'item voulu.(ou alors fait glisser ton portefeuille jusqu'à l'item)</AVANT>
+        <APRES>Une bouteille d'ice tea, idéal pour décomprésser un peu (permet d'ajouter du temps)</APRES>
+        <MODE>item</MODE>
+    </OBJ>
+    <OBJ>
+        <ID>4</ID>
+        <NAME>ami</NAME>
+        <IMG>assets/images/jeu/friend.png</IMG>
+        <LAT>48.8490756545978,48.809075654597822</LAT>
+        <LNG>2.3967146873474126,2.4567146873474126</LNG>
+        <MINZOOM>13</MINZOOM>
+        <AVANT>Il est temps de rejoindre ton ami. Tu sais qu'il est dans l'est de Paris, mais tu ne sais pas où exactement. Utilise ton téléphone pour l'appeler et fixer un rendez-vous.</AVANT>
+        <APRES>Vous voilà enfin réunis ! !</APRES>
+        <MODE>code</MODE>
+    </OBJ>
+    <OBJ>
+        <ID>5</ID>
+        <NAME>pizza</NAME>
+        <IMG>assets/images/jeu/pizza.png</IMG>
+        <LAT>48.868127</LAT>
+        <LNG>2.3257835</LNG>
+        <MINZOOM>17</MINZOOM>
+        <AVANT>La faim commence à se faire sentir ! Il est temps d'aller manger. Trouve une des pizzerias près de la Place de la Concorde pour pouvoir savourer un bon repas.</AVANT>
+        <APRES>Quand l'appétit va, tout va! (Peut servir à passer une énigme)</APRES>
+        <MODE>click</MODE>
+    </OBJ>
+    <OBJ>
+        <ID>6</ID>
+        <NAME>le gymnase</NAME>
+        <IMG>assets/images/jeu/match.png</IMG>
+        <LAT>48.83525369115733</LAT>
+        <LNG>2.256301045417786</LNG>
+        <MINZOOM>16</MINZOOM>
+        <AVANT>Tu as bien mangé, mais il va falloir se dépécher pour arriver à l'heure au match. Rends toi au stade Pierre de Coubertin et utilise ton portefeuille pour payer ton billet.</AVANT>
+        <APRES>Ca va te changer un peu les idées.</APRES>
+        <MODE>item</MODE>
+    </OBJ>
+    <OBJ>
+        <ID>7</ID>
+        <NAME>moi</NAME>
+        <IMG>assets/images/histoire/paul_perdu3.png</IMG>
+        <LAT>48.8346438</LAT>
+        <LNG>2.3373797</LNG>
+        <MINZOOM>13</MINZOOM>
+        <AVANT>Mince, en raccompagnant ton ami, tu t'es perdu. Dévérouille ton téléphone pour pouvoir retrouver ton chemin grâce à l'application Géoportail.</AVANT>
+        <APRES>Ah ben enfin !</APRES>
+        <MODE>code</MODE>
+    </OBJ>
+    <OBJ>
+        <ID>8</ID>
+        <NAME>la gare</NAME>
+        <IMG>assets/images/jeu/gare.png</IMG>
+        <LAT>48.8336354</LAT>
+        <LNG>2.3352271</LNG>
+        <MINZOOM>17</MINZOOM>
+        <AVANT>Tu peux maintenant rentrer chez toi, mais il se fait tard et les transports se raréfient. Essaie de retrouver la gare qui te permettra de rentrer le plus vite chez toi. Les différentes gares te font perdre un certain temps sur ton chronomètre, fait le bon choix !</AVANT>
+        <APRES>Bien joué !</APRES>
+        <MODE>click</MODE>
+    </OBJ>
+    <OBJ>
+        <ID>9</ID>
+        <NAME>la maison</NAME>
+        <IMG>assets/images/jeu/home.png</IMG>
+        <LAT>48.84614211612615</LAT>
+        <LNG>2.5847657024860387</LNG>
+        <MINZOOM>17</MINZOOM>
+        <AVANT>Tu as trouvé la gare, tu vas maintenant pouvoir retourner à la maison, et travailler sur ton projet. Retourne chez toi.</AVANT>
+        <APRES>Enfin rentré, quelle journée !</APRES>
+        <MODE>click</MODE>
+    </OBJ>
+</CATALOG>

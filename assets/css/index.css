@@ -1,0 +1,46 @@
+body {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+#passer {
+    position:absolute;
+    bottom: 2em; 
+    right: 2em; 
+
+    width : auto;
+    padding : 10px;
+    margin: 10px;
+    
+    border : solid;
+    border-radius: 1em;
+    border-color: #837C9A;
+
+    background-color:#837C9A;
+    color : black;
+    opacity: 0.6;
+
+    font-weight: bold;
+}
+
+#info_text {
+    position:absolute;
+    bottom: 1em; 
+    left: 1em; 
+}
+
+#histoire_text {
+    position:absolute;
+    top: 1em; 
+    left: 1em; 
+
+    padding: 1em;
+    /* margin: 1em; */
+
+    border : solid;
+    border-radius: 1em;
+    border-color: #837C9A;
+
+    background-color: #837C9A;
+
+    text-align: justify;
+}
